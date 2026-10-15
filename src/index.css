@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", sans-serif;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: white;
+  font-family: "Manrope", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-link {
+  position: relative;
+  padding-block: 0.5rem;
+  color: #12376b;
+}
+
+.nav-link::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  border-radius: 999px;
+  content: "";
+  background: #f6bd3c;
+  transform: scaleX(0);
+  transition: transform 200ms ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.hero {
+  background-image:
+    linear-gradient(128deg, transparent 67%, rgb(7 88 166 / 4%) 67%),
+    repeating-linear-gradient(135deg, transparent 0 54px, rgb(18 55 107 / 2.5%) 54px 56px);
+}
+
+.hero-stripe {
+  background: linear-gradient(90deg, #f6bd3c 0 30%, #a6602c 30% 42%, #0758a6 42%);
+}
+
+.photo-card {
+  z-index: 1;
+  overflow: hidden;
+  border: 9px solid white;
+  border-radius: 2rem;
+  box-shadow: 0 24px 55px rgb(18 55 107 / 22%);
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 800;
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.primary-button {
+  background: #0758a6;
+  color: white;
+  box-shadow: 0 6px 0 #d7e7f5;
+}
+
+.secondary-button {
+  border: 2px solid rgb(18 55 107 / 18%);
+  color: #12376b;
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-2px);
+}
+
+.eyebrow {
+  color: #a6602c;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.stage-card {
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.stage-card:hover {
+  box-shadow: 0 18px 35px rgb(18 55 107 / 14%);
+  transform: translateY(-7px);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  color: #12376b;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  border: 1.5px solid rgb(18 55 107 / 14%);
+  border-radius: 1rem;
+  outline: none;
+  background: #f7f9fc;
+  padding: 0.9rem 1rem;
+  color: #12376b;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.form-field textarea {
+  resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: rgb(18 55 107 / 35%);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: #2f86cf;
+  background: white;
+  box-shadow: 0 0 0 4px rgb(47 134 207 / 12%);
+}
+
+::selection {
+  background: #f6bd3c;
+  color: #12376b;
+}
+
+@media (max-width: 640px) {
+  .photo-card {
+    border-width: 6px;
+    border-radius: 1.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
