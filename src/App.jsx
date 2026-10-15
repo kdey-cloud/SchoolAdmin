@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import Admin from "./pages/admin"; // Adjust this path to match your project
+import Admin from "./pages/Admin.tsx"; // Adjust this path to match your project
 
 function App() {
 const location = useLocation();
